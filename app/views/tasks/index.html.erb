@@ -1,0 +1,14 @@
+<h1>Organizer</h1>
+<br>
+<% @tasks.each_with_index do |task, index| %>
+  <div class="form-check form-check<%=index%>">
+  	<input class="form-check-input" type="checkbox" value="" id="defaultCheck<%=index%>">
+		<label class="form-check-label" for="defaultCheck<%=index%>"><%= task.title %></label>
+		<%= link_to "Détails", task_path(task) %>
+	</div>
+<% end %>
+
+<hr>
+<i class="fas fa-plus"></i><span> </span><%= link_to "Create a task", new_path %>
+
+
